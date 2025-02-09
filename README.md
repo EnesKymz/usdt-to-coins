@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## USDT to Coins Converter
 
-## Getting Started
+This project allows users to calculate the amount of various cryptocurrencies (Bitcoin, Pepe, Ethereum, Dogecoin, etc.) they can buy based on their available USDT balance. Real-time price data is fetched from the CoinGecko API and is updated dynamically.
+Features
 
-First, run the development server:
+    Real-time prices: The latest USD prices for popular coins like Bitcoin, Ethereum, Pepe, and Dogecoin are fetched via the CoinGecko API.
+    USDT to Coin Calculation: Users can enter their USDT balance to see how many coins they can purchase with that amount.
+    Comprehensive Coin List: Additional coins can be easily added or removed. Currently, Bitcoin, Pepe, Ethereum, and Dogecoin are supported.
+    Simple and elegant interface: With a modern and user-friendly interface, users can visually track coin prices and amounts.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Installation
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    Clone this repository to your local machine:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+git clone https://github.com/username/usdt-to-coins.git
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Install the required dependencies:
 
-## Learn More
+cd usdt-to-coins
+npm install
 
-To learn more about Next.js, take a look at the following resources:
+## Start the development server:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    npm run dev
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+    The app will be available at http://localhost:3000.
 
-## Deploy on Vercel
+## Usage
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+    Once the app is started, you will be presented with an input field to enter your USDT amount.
+    The coin prices will be displayed based on USDT, and the corresponding coin amounts will be automatically calculated.
+    You can click on the coins to view their TradingView charts.
