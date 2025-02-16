@@ -49,7 +49,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-orange-500 flex justify-center items-center p-4">
-      <div className="bg-white shadow-2xl rounded-2xl p-8 w-full max-w-2xl">
+      <h5>QUANTUM CLUB LFGGGGG</h5>
+    { /* <div className="bg-white shadow-2xl rounded-2xl p-8 w-full max-w-2xl">
         <div className="text-center mb-6">
           <h2 className="text-2xl font-semibold text-gray-800">How much USDT do you have?</h2>
           <input
@@ -85,7 +86,7 @@ export default function Home() {
             </tbody>
           </table>
         </div>
-      </div>
+      </div>*/}
     </div>
   );
 }
