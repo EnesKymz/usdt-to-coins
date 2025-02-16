@@ -1,52 +1,6 @@
 "use client"
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { useCoinContext } from "./context/pricingContext";
+
 export default function Home() {
-  const [usdt, setUsdt] = useState<number>();
-
-  const coins = ["bitcoin", "pepe", "ethereum", "sui"]; // Coins
-  const {coinPrices,setCoinPrices}=useCoinContext()
-  useEffect(() => {
-    const fetchCoinPrices = async () => {
-      try {
-        const responses = await Promise.all(
-          coins.map((coin) =>
-            fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${coin}&vs_currencies=usd`)
-              .then((res) => {
-                if(!res.ok) {
-                  throw new Error(`Failed to fetch price for ${coin}`)
-                }
-                return res.json()
-              })
-              .then((data) => ({
-                coin,
-                price: data[coin]?.usd ? data[coin]?.usd : 0 ,
-              })).catch((error) =>{
-                console.error(error);
-                return {coin, price:0};
-              })
-          )
-        );
-        
-        const prices = responses.reduce((acc, { coin, price  }) => {
-          acc[coin] = price > 0 ? price : 0;
-          return acc;
-        }, {} as { [key: string]: number });
-        localStorage.setItem("prices",JSON.stringify(prices));
-        setCoinPrices(prices);
-      } catch (error) {
-        console.error("Error fetching coin prices:", error);
-      }
-    };
-
-    fetchCoinPrices();
-
-    const intervalId = setInterval(fetchCoinPrices, 30000);
-
-    return () => clearInterval(intervalId);
-  }, [coinPrices,setCoinPrices,coins]);
-
   return (
     <div className="min-h-screen bg-orange-500 flex justify-center items-center p-4">
       <h5>QUANTUM CLUB LFGGGGG</h5>
