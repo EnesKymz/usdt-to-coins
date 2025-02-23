@@ -33,7 +33,8 @@ export default function Home() {
           acc[coin] = price > 0 ? price : 0;
           return acc;
         }, {} as { [key: string]: number });
-        localStorage.setItem("prices",JSON.stringify(prices));
+        if(typeof window !=="undefined")
+        {localStorage.setItem("prices",JSON.stringify(prices));}
         setCoinPrices(prices);
       } catch (error) {
         console.error("Error fetching coin prices:", error);
@@ -49,7 +50,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-orange-500 flex justify-center items-center p-4">
-      <h5>QUANTUM CLUB LFGGGGG</h5>
       <div className="bg-white shadow-2xl rounded-2xl p-8 w-full max-w-2xl">
         <div className="text-center mb-6">
           <h2 className="text-2xl font-semibold text-gray-800">How much USDT do you have?</h2>
@@ -73,7 +73,8 @@ export default function Home() {
             </thead>
             <tbody>
               {coins.map((coin) => {
-                const coinPrice = coinPrices[coin];
+                if(coinPrices)
+                {const coinPrice = coinPrices[coin];
                 const adet = coinPrice ? (usdt ? usdt : 0) / coinPrice : 0;
                 return (
                   <tr key={coin} className="border-b">
@@ -81,7 +82,7 @@ export default function Home() {
                     <td className="py-3 px-4">{coinPrice ? `${coinPrice} USDT` : "Loading..."}</td>
                     <td className="py-3 px-4">{adet.toFixed(6)}</td>
                   </tr>
-                );
+                );}
               })}
             </tbody>
           </table>
